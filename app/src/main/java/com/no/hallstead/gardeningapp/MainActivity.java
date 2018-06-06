@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
         // content change
 
-        //a9pshfasdiuh
+        // I dont like garbled messes!
         // content changed AGAIN!
     }
 }
