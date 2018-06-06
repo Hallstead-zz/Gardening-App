@@ -11,8 +11,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // content change
-
+        
         //I like this change!
+        // I dont like garbled messes!
         // content changed AGAIN!
     }
 }
