@@ -17,7 +17,8 @@ public class Plant {
         this.datePlanted = datePlanted;
         dateToHarvest = new GregorianCalendar();
         dateToHarvest.add(dateToHarvest.DAY_OF_MONTH, type.getTimeToHarvest());
-        dateLastWatered = new GregorianCalendar();
+        GregorianCalendar newCalendar = (GregorianCalendar) datePlanted.clone();
+        dateLastWatered = newCalendar;
     }
 
     public String getName() {
@@ -30,6 +31,10 @@ public class Plant {
 
     public void water() {
         dateLastWatered = new GregorianCalendar();
+    }
+
+    public GregorianCalendar getDateLastWatered() {
+        return dateLastWatered;
     }
 
     public void harvest() {

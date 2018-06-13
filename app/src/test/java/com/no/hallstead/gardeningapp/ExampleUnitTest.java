@@ -2,6 +2,7 @@ package com.no.hallstead.gardeningapp;
 
 import org.junit.Test;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.GregorianCalendar;
 
 import static org.junit.Assert.*;
@@ -20,10 +21,13 @@ public class ExampleUnitTest {
     @Test
     public void plantCarrotsWaterTest() {
         GregorianCalendar carrotPlantDate = new GregorianCalendar();
+        carrotPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
         PlantType carrotType = new PlantType("Carrot", 2, 30);
         Plant carrot = new Plant(carrotType, carrotPlantDate);
-        carrotPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
-
+        carrot.water();
+        GregorianCalendar today = new GregorianCalendar();
+        GregorianCalendar lastWatered = carrot.getDateLastWatered();
+        assertEquals(today.DAY_OF_MONTH, lastWatered.DAY_OF_MONTH);
 
 
     }
