@@ -29,7 +29,7 @@ public class Plant {
     }
 
     public void water() {
-        
+        dateLastWatered = new GregorianCalendar();
     }
 
     public void harvest() {
