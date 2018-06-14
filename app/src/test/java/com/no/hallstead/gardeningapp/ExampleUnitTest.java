@@ -38,8 +38,6 @@ public class ExampleUnitTest {
         assertEquals(carrot.getDatePlanted(), carrotPlantDate);
     }
 
-        assert(carrotPlantDate != null);
-
     @Test
     public void plantWaterTest() {
         GregorianCalendar carrotPlantDate = new GregorianCalendar();
