@@ -2,6 +2,7 @@ package com.no.hallstead.gardeningapp;
 
 import org.junit.Test;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.GregorianCalendar;
 
 import static org.junit.Assert.*;
@@ -18,13 +19,37 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void plantCarrotsWaterTest() {
-        GregorianCalendar carrotPlantDate = new GregorianCalendar();
+    public void plantTypeConstructorTest() {
+        int waterFreq = 2;
+        int timeToHarvest = 30;
+        String name = "Carrot";
+        PlantType carrotType = new PlantType(name, waterFreq, timeToHarvest);
+        assertEquals(carrotType.getTimeToHarvest(), timeToHarvest);
+        assertEquals(carrotType.getWaterFreq(), waterFreq);
+        assertEquals(carrotType.getName(), name);
+    }
+
+    @Test
+    public void plantConstructorTest() {
         PlantType carrotType = new PlantType("Carrot", 2, 30);
+        GregorianCalendar carrotPlantDate = new GregorianCalendar();
         Plant carrot = new Plant(carrotType, carrotPlantDate);
-        carrotPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
+        assertEquals(carrot.getName(), "Carrot");
+        assertEquals(carrot.getDatePlanted(), carrotPlantDate);
+    }
 
         assert(carrotPlantDate != null);
+
+    @Test
+    public void plantWaterTest() {
+        GregorianCalendar carrotPlantDate = new GregorianCalendar();
+        carrotPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
+        PlantType carrotType = new PlantType("Carrot", 2, 30);
+        Plant carrot = new Plant(carrotType, carrotPlantDate);
+        carrot.water();
+        GregorianCalendar today = new GregorianCalendar();
+        GregorianCalendar lastWatered = carrot.getDateLastWatered();
+        assertEquals(today.DAY_OF_MONTH, lastWatered.DAY_OF_MONTH);
 
 
 
@@ -44,4 +69,6 @@ public class ExampleUnitTest {
 
         assert(potato != tomato);
     }
+
+
 }
