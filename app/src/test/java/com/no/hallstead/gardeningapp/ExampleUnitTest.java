@@ -19,7 +19,28 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void plantCarrotsWaterTest() {
+    public void plantTypeConstructorTest() {
+        int waterFreq = 2;
+        int timeToHarvest = 30;
+        String name = "Carrot";
+        PlantType carrotType = new PlantType(name, waterFreq, timeToHarvest);
+        assertEquals(carrotType.getTimeToHarvest(), timeToHarvest);
+        assertEquals(carrotType.getWaterFreq(), waterFreq);
+        assertEquals(carrotType.getName(), name);
+    }
+
+    @Test
+    public void plantConstructorTest() {
+        PlantType carrotType = new PlantType("Carrot", 2, 30);
+        GregorianCalendar carrotPlantDate = new GregorianCalendar();
+        Plant carrot = new Plant(carrotType, carrotPlantDate);
+        assertEquals(carrot.getName(), "Carrot");
+        assertEquals(carrot.getDatePlanted(), carrotPlantDate);
+    }
+
+
+    @Test
+    public void plantWaterTest() {
         GregorianCalendar carrotPlantDate = new GregorianCalendar();
         carrotPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
         PlantType carrotType = new PlantType("Carrot", 2, 30);
@@ -31,4 +52,6 @@ public class ExampleUnitTest {
 
 
     }
+
+
 }
