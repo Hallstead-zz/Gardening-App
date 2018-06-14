@@ -24,7 +24,24 @@ public class ExampleUnitTest {
         Plant carrot = new Plant(carrotType, carrotPlantDate);
         carrotPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
 
+        assert(carrotPlantDate != null);
 
 
+
+    }
+
+    @Test
+    public void createDifferentPlantsTest() {
+        GregorianCalendar potatoPlantDate = new GregorianCalendar();
+        PlantType potatoType = new PlantType("Potato", 3, 40);
+        Plant potato = new Plant(potatoType, potatoPlantDate);
+        potatoPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
+
+        GregorianCalendar tomatoPlantDate = new GregorianCalendar();
+        PlantType tomatoType = new PlantType("Tomato", 2, 30);
+        Plant tomato = new Plant(tomatoType, tomatoPlantDate);
+        tomatoPlantDate.add(GregorianCalendar.DAY_OF_MONTH, -2);
+
+        assert(potato != tomato);
     }
 }
