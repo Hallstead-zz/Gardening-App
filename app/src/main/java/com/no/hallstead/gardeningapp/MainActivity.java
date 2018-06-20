@@ -18,9 +18,7 @@ public class MainActivity extends AppCompatActivity {
         PlantType potato = new PlantType("Potatoes", 2,30);
         String carrotJson = gson.toJson(carrot, PlantType.class);
         String potatoJson = gson.toJson(potato, PlantType.class);
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-
         editor.putString("Carrots", carrotJson);
         editor.putString("Potatoes", potatoJson);
         editor.apply();
@@ -31,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setPlantTypes();
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        if (preferences.getString("Carrots", "").equals("")) {
+            setPlantTypes();
+        }
     }
 
     public void onClickPlot(View view) {

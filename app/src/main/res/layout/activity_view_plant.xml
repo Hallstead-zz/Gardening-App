@@ -6,15 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".ViewPlant">
 
+    <TextView
+        android:id="@+id/labelLastWatered"
+        android:layout_width="155dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Last Watered:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelDatePlanted"
+        tools:text="Last Watered:" />
+
+    <TextView
+        android:id="@+id/labelDatePlanted"
+        android:layout_width="155dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:text="Date Planted:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelPlantName"
+        tools:text="Date Planted:" />
+
+    <TextView
+        android:id="@+id/labelPlantName"
+        android:layout_width="125dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="96dp"
+        android:text="Plant:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Plant:" />
+
     <Button
         android:id="@+id/harvest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="147dp"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="366dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="360dp"
         android:onClick="harvest"
         android:text="Harvest"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="67dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="100dp"
+        android:text="Water"
+        app:layout_constraintStart_toEndOf="@+id/harvest"
+        app:layout_constraintTop_toBottomOf="@+id/waterView" />
+
+    <TextView
+        android:id="@+id/dateView"
+        android:layout_width="122dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="155dp"
+        app:layout_constraintStart_toEndOf="@+id/labelDatePlanted"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/waterView"
+        android:layout_width="127dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/labelLastWatered"
+        app:layout_constraintTop_toBottomOf="@+id/dateView" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="121dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintStart_toEndOf="@+id/labelPlantName"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
