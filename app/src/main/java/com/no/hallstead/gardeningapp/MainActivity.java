@@ -7,6 +7,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    Plant plant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,8 +17,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickPlot(View view) {
-        Intent myIntent = new Intent(MainActivity.this, AddPlantToPlot.class);
+        Intent myIntent;
+        if (plant == null) {
+            myIntent = new Intent(this, AddPlantToPlot.class);
+        }
+        else {
+            myIntent = new Intent(this, ViewPlant.class);
+        }
+
         //myIntent.putExtra("key", value); //Optional parameters
-        MainActivity.this.startActivity(myIntent);
+        startActivity(myIntent);
     }
 }
