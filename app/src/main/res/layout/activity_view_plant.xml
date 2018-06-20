@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ViewPlant">
 
+    <Button
+        android:id="@+id/harvest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="147dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="366dp"
+        android:onClick="harvest"
+        android:text="Harvest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

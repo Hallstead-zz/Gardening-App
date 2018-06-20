@@ -14,7 +14,7 @@
         android:layout_height="44dp"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="96dp"
         android:text="Plant Type"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
@@ -31,7 +31,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
-        android:text="Date Planted"
+        android:text="Date Planted:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -40,7 +40,7 @@
 
     <Spinner
         android:id="@+id/typeSpinner"
-        android:layout_width="215dp"
+        android:layout_width="133dp"
         android:layout_height="41dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
@@ -48,5 +48,59 @@
         android:entries="@array/Plant_Types"
         app:layout_constraintStart_toEndOf="@+id/labelPlantType"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="59dp"
+        android:onClick="addPlant"
+        android:text="Add Plant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monthInput" />
+
+    <EditText
+        android:id="@+id/monthInput"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:maxLength="2"
+        android:hint="MM"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelDatePlanted" />
+
+    <EditText
+        android:id="@+id/dayInput"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:maxLength="2"
+        android:hint="DD"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/monthInput"
+        app:layout_constraintTop_toBottomOf="@+id/labelDatePlanted" />
+
+    <EditText
+        android:id="@+id/yearInput"
+        android:layout_width="76dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:maxLength="4"
+        android:hint="YYYY"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/dayInput"
+        app:layout_constraintTop_toBottomOf="@+id/labelDatePlanted" />
 
 </android.support.constraint.ConstraintLayout>
