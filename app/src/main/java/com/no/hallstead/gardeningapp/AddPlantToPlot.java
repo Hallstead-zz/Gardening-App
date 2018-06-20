@@ -35,27 +35,37 @@ public class AddPlantToPlot extends AppCompatActivity {
     }
 
     public void addPlant(View view) {
-
-        EditText editText0 = findViewById(R.id.monthInput);
-        Integer month = Integer.valueOf(editText0.getText().toString());
-        EditText editText1 = findViewById(R.id.dayInput);
-        Integer day = Integer.valueOf(editText1.getText().toString());
-        EditText editText2 = findViewById(R.id.yearInput);
-        Integer year = Integer.valueOf(editText2.getText().toString());
-
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
 
+        EditText editText0 = findViewById(R.id.monthInput);
+        String month = editText0.getText().toString();
+        EditText editText1 = findViewById(R.id.dayInput);
+        String day = editText1.getText().toString();
+        EditText editText2 = findViewById(R.id.yearInput);
+        String year = editText2.getText().toString();
+
+        if (month.equals("") || day.equals("") || year.equals("")) {
+            Toast toast = Toast.makeText(context, "Please enter a date", duration);
+            toast.show();
+            return;
+        }
+
+        Spinner mySpinner = findViewById(R.id.typeSpinner);
+        String plantName = mySpinner.getSelectedItem().toString();
+        if (plantName.equals("Select...")){
+            Toast toast = Toast.makeText(context, "Please select a plant", duration);
+            toast.show();
+            return;
+        }
         if(!isLegalDate((year + "-" + month + "-" + day))) {
             Toast toast = Toast.makeText(context, "Requires a valid date!", duration);
             toast.show();
             return;
         }
-        GregorianCalendar planted = new GregorianCalendar(year, month, day);
+        GregorianCalendar planted = new GregorianCalendar(Integer.valueOf(year), Integer.valueOf(month), Integer.valueOf(day));
 
         Gson gson = new Gson();
-        Spinner mySpinner = findViewById(R.id.typeSpinner);
-        String plantName = mySpinner.getSelectedItem().toString();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         PlantType type = gson.fromJson(preferences.getString(plantName, ""), PlantType.class);
         Plant newPlant = new Plant(type, planted);

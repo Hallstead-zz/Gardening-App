@@ -7,19 +7,13 @@ public class Plant {
     private String name;
     private PlantType type;
     private GregorianCalendar datePlanted;
-    private GregorianCalendar dateToHarvest;
     private GregorianCalendar dateLastWatered;
-    private boolean needsWater;
-    private boolean needsHarvest;
 
     public Plant(PlantType type, GregorianCalendar datePlanted) {
         name = type.getName();
         this.type = type;
         this.datePlanted = datePlanted;
-        dateToHarvest = new GregorianCalendar();
-        dateToHarvest.add(dateToHarvest.DAY_OF_MONTH, type.getTimeToHarvest());
-        GregorianCalendar newCalendar = (GregorianCalendar) datePlanted.clone();
-        dateLastWatered = newCalendar;
+        dateLastWatered = (GregorianCalendar) datePlanted.clone();
     }
 
     public String getName() {
@@ -37,11 +31,4 @@ public class Plant {
     public GregorianCalendar getDateLastWatered() {
         return dateLastWatered;
     }
-
-    public void harvest() {
-        return;
-    }
-
-
-
 }

@@ -36,7 +36,7 @@ public class ViewPlant extends AppCompatActivity {
     public void harvest(View view) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.remove("Main Plant").commit();
+        editor.remove("Main Plant").apply();
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Plant Harvested", duration);
