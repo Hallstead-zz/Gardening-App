@@ -7,6 +7,246 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/placeholderGrid21"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid22"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid16" />
+
+    <Button
+        android:id="@+id/placeholderGrid22"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid23"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid21"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid17" />
+
+    <Button
+        android:id="@+id/placeholderGrid23"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid24"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid22"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid18" />
+
+    <Button
+        android:id="@+id/placeholderGrid24"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid25"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid23"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid19" />
+
+    <Button
+        android:id="@+id/placeholderGrid25"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid24"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid20" />
+
+    <Button
+        android:id="@+id/placeholderGrid11"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid6" />
+
+    <Button
+        android:id="@+id/placeholderGrid12"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid11"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid7" />
+
+    <Button
+        android:id="@+id/placeholderGrid13"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid12"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid8" />
+
+    <Button
+        android:id="@+id/placeholderGrid14"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid15"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid13"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid9" />
+
+    <Button
+        android:id="@+id/placeholderGrid15"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid14"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid10" />
+
+    <Button
+        android:id="@+id/placeholderGrid16"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid11" />
+
+    <Button
+        android:id="@+id/placeholderGrid17"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid18"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid16"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid12" />
+
+    <Button
+        android:id="@+id/placeholderGrid18"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid19"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid17"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid13" />
+
+    <Button
+        android:id="@+id/placeholderGrid19"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid20"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid18"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid14" />
+
+    <Button
+        android:id="@+id/placeholderGrid20"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid19"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid15" />
+
+    <Button
+        android:id="@+id/placeholderGrid6"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid" />
+
+    <Button
+        android:id="@+id/placeholderGrid7"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid6"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid2" />
+
+    <Button
+        android:id="@+id/placeholderGrid8"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid7"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid3" />
+
+    <Button
+        android:id="@+id/placeholderGrid9"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid8"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid4" />
+
+    <Button
+        android:id="@+id/placeholderGrid10"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid9"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderGrid5" />
+
+    <Button
         android:id="@+id/newPlot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,16 +288,66 @@
 
     <Button
         android:id="@+id/placeholderGrid"
-        android:layout_width="344dp"
-        android:layout_height="360dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginTop="8dp"
         android:onClick="onClickPlot"
-        android:text="spot 1 un-sized"
         android:tag="1"
-        app:layout_constraintBottom_toTopOf="@+id/loadPlot"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid2"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderInfo" />
+
+    <Button
+        android:id="@+id/placeholderGrid2"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderInfo" />
+
+    <Button
+        android:id="@+id/placeholderGrid3"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid2"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderInfo" />
+
+    <Button
+        android:id="@+id/placeholderGrid4"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toStartOf="@+id/placeholderGrid5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid3"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderInfo" />
+
+    <Button
+        android:id="@+id/placeholderGrid5"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickPlot"
+        android:tag="1"
+        android:text="spot 1 un-sized"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/placeholderGrid4"
         app:layout_constraintTop_toBottomOf="@+id/placeholderInfo" />
 
     <Button
