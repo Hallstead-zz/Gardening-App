@@ -22,10 +22,14 @@ import java.util.GregorianCalendar;
 
 public class AddPlantToPlot extends AppCompatActivity {
 
+    String plotLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_plant_to_plot);
+        Intent intent = getIntent();
+        plotLocation = intent.getStringExtra("plotLocation");
     }
 
     boolean isLegalDate(String s) {
@@ -71,7 +75,7 @@ public class AddPlantToPlot extends AppCompatActivity {
         Plant newPlant = new Plant(type, planted);
         SharedPreferences.Editor editor = preferences.edit();
         String mainPlant = gson.toJson(newPlant, Plant.class);
-        editor.putString("Main Plant", mainPlant);
+        editor.putString(("Plant" + plotLocation), mainPlant);
         editor.apply();
         Toast toast = Toast.makeText(context, "Plant was added!", duration);
         toast.show();

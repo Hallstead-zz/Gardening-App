@@ -37,11 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickPlot(View view) {
         Intent myIntent;
-        if (preferences.getString("Main Plant", "").equals("")) {
+        String value = (String) view.getTag();
+        if (preferences.getString(("Plant" + value), "").equals("")) {
             myIntent = new Intent(this, AddPlantToPlot.class);
+            myIntent.putExtra("plotLocation", value);
         }
         else {
             myIntent = new Intent(this, ViewPlant.class);
+            myIntent.putExtra("plotLocation", value);
         }
 
         //myIntent.putExtra("key", value); //Optional parameters
