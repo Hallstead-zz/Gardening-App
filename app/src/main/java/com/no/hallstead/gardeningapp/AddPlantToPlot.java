@@ -20,10 +20,12 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
+/** */
 public class AddPlantToPlot extends AppCompatActivity {
 
     String plotLocation;
 
+    /** */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,16 +34,21 @@ public class AddPlantToPlot extends AppCompatActivity {
         plotLocation = intent.getStringExtra("plotLocation");
     }
 
+    /** */
     boolean isLegalDate(String s) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         sdf.setLenient(false);
         return sdf.parse(s, new ParsePosition(0)) != null;
     }
 
+    /** */
     public void addPlant(View view) {
+
+        //For future toasts
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
 
+        //Gets the date input
         EditText editText0 = findViewById(R.id.monthInput);
         String month = editText0.getText().toString();
         EditText editText1 = findViewById(R.id.dayInput);
@@ -49,6 +56,7 @@ public class AddPlantToPlot extends AppCompatActivity {
         EditText editText2 = findViewById(R.id.yearInput);
         String year = editText2.getText().toString();
 
+        //Validates that the user input a date
         if (month.equals("") || day.equals("") || year.equals("")) {
             Toast toast = Toast.makeText(context, "Please enter a date", duration);
             toast.show();
@@ -57,11 +65,15 @@ public class AddPlantToPlot extends AppCompatActivity {
 
         Spinner mySpinner = findViewById(R.id.typeSpinner);
         String plantName = mySpinner.getSelectedItem().toString();
+
+        //Validates that the user selected a plant type
         if (plantName.equals("Select...")){
             Toast toast = Toast.makeText(context, "Please select a plant", duration);
             toast.show();
             return;
         }
+
+        //Validates the entered date
         if(!isLegalDate((year + "-" + month + "-" + day))) {
             Toast toast = Toast.makeText(context, "Requires a valid date!", duration);
             toast.show();
@@ -69,6 +81,7 @@ public class AddPlantToPlot extends AppCompatActivity {
         }
         GregorianCalendar planted = new GregorianCalendar(Integer.valueOf(year), Integer.valueOf(month), Integer.valueOf(day));
 
+        //Saves the plant to shared preferences
         Gson gson = new Gson();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         PlantType type = gson.fromJson(preferences.getString(plantName, ""), PlantType.class);
@@ -77,6 +90,8 @@ public class AddPlantToPlot extends AppCompatActivity {
         String mainPlant = gson.toJson(newPlant, Plant.class);
         editor.putString(("Plant" + plotLocation), mainPlant);
         editor.apply();
+
+        //Informs the user that the Plant was added and exits
         Toast toast = Toast.makeText(context, "Plant was added!", duration);
         toast.show();
         finish();
