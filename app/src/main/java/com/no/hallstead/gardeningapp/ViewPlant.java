@@ -15,13 +15,14 @@ import com.google.gson.Gson;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-/** */
+/**
+ * Activity that displays the data of a selected plant in the plot
+ */
 public class ViewPlant extends AppCompatActivity {
 
     String plotLocation;
     Plant plant;
 
-    /** */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,10 @@ public class ViewPlant extends AppCompatActivity {
         initView.setText((watered.get(Calendar.MONTH) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
     }
 
-    /** */
+    /**
+     * Function call to remove a plant from the plot
+     * @param view
+     */
     public void harvest(View view) {
 
         //Removes the plant from shared preferences.
@@ -63,7 +67,10 @@ public class ViewPlant extends AppCompatActivity {
         finish();
     }
 
-    /** */
+    /**
+     * Changes date last watered to the current system date
+     * @param view
+     */
     public void water(View view) {
         plant.water();
 

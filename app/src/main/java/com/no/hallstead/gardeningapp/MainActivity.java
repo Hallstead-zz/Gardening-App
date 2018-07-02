@@ -8,12 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import com.google.gson.Gson;
 
-/** */
+/**
+ * Primary working space for the application
+ */
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
 
-    /** */
+    /**
+     * Sets the default values for all predefined plant types
+     */
     public void setPlantTypes() {
         Gson gson = new Gson();
         PlantType carrot = new PlantType("Carrots", 2,30);
@@ -26,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    /** */
+    /**
+     * Code that runs when the activity is created. Generates the view of the plot.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /** */
+    /**
+     * When you click on a square in the plot, this determines whether the
+     * AddPlantToPlot or ViewPlant activity is started.
+     * @param view
+     */
     public void onClickPlot(View view) {
         Intent myIntent;
 

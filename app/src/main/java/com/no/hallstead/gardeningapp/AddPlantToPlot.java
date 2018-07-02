@@ -21,7 +21,9 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-/** */
+/**
+ * Activity responsible for inserting a plant into a plot space.
+ */
 public class AddPlantToPlot extends AppCompatActivity {
 
     String plotLocation;
@@ -35,14 +37,21 @@ public class AddPlantToPlot extends AppCompatActivity {
         plotLocation = intent.getStringExtra("plotLocation");
     }
 
-    /** */
+    /**
+     * Verifies that the date planted is valid
+     * @param s
+     * @return
+     */
     boolean isLegalDate(String s) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         sdf.setLenient(false);
         return sdf.parse(s, new ParsePosition(0)) != null;
     }
 
-    /** */
+    /**
+     * Collects data from entry boxes to create a stored plant
+     * @param view
+     */
     public void addPlant(View view) {
 
         //For future toasts
