@@ -72,4 +72,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void onClickNewPlot(View view) {
+        
+    }
 }
