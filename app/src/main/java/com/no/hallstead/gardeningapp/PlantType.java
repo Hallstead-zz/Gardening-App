@@ -7,6 +7,7 @@ public class PlantType {
     private String name;
     private int waterFreq;
     private int timeToHarvest;
+    private String tipsText;
 
     /**
      * Non-default constructor
@@ -32,5 +33,13 @@ public class PlantType {
 
     public int getTimeToHarvest() {
         return timeToHarvest;
+    }
+
+    public String getTips() {
+        return tipsText;
+    }
+
+    public void setTips(String text) {
+        tipsText = text;
     }
 }

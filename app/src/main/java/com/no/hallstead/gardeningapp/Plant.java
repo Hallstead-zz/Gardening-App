@@ -27,14 +27,16 @@ public class Plant {
 
     //Getters and setters:
 
-    /** */
     public String getName() {
         return name;
     }
 
-    /** */
     public GregorianCalendar getDatePlanted() {
         return datePlanted;
+    }
+
+    public PlantType getType() {
+        return type;
     }
 
     /** */

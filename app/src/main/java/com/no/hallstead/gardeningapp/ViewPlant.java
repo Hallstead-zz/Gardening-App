@@ -22,6 +22,7 @@ public class ViewPlant extends AppCompatActivity {
 
     String plotLocation;
     Plant plant;
+    PlantType plantType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class ViewPlant extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         Gson gson = new Gson();
         plant = gson.fromJson(preferences.getString(("Plant" + plotLocation), ""), Plant.class);
+        plantType = (plant.getType());
 
         //sets the fields to the information of the plant
         TextView initView = findViewById(R.id.nameView);
@@ -44,6 +46,8 @@ public class ViewPlant extends AppCompatActivity {
         initView = findViewById(R.id.waterView);
         GregorianCalendar watered = plant.getDateLastWatered();
         initView.setText((watered.get(Calendar.MONTH) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
+        initView = findViewById(R.id.tipsView);
+        initView.setText(plantType.getTips());
     }
 
     /**

@@ -22,6 +22,30 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         PlantType carrot = new PlantType("Carrots", 2,30);
         PlantType potato = new PlantType("Potatoes", 2,30);
+        carrot.setTips("Planting:\n" +
+                "Plant 3 weeks before the last expected frost. Plant more every 2-3 weeks afterward. Rake the soil so that it is loose and free of rocks before planting. Make sure the carrots have a few inches space in between, as carrots that are too close together produce crooked roots.\n" +
+                "\n" +
+                "Watering:\n" +
+                "Need 1 inch of water per week.\n" +
+                "At first carrots need low volumes of water frequently. Once the tops develop more leaves, the frequency and volumes should be reduced to induce longer growth in the roots. Increase just the volume again toward the end of the lifecycle.\n" +
+                "\n" +
+                "Care:\n" +
+                "Keep free of weeds, especially when the carrots are small. Thin the carrots from time to time so they have room to grow.\n" +
+                "\n" +
+                "Harvesting:\n" +
+                "Harvest after 2 - 4 months.\n" +
+                "You can harvest carrots when they’re big enough to eat, or let them all mature until you can harvest them all at once. Harvest them on a day with dry air but moist soil. Loosen the soil with a trowel then pull by hand.");
+        potato.setTips("Planting:\n" +
+                "Plant in early spring in moist but not water-logged soil. 1-2 weeks before planting, set seed potatoes where they will receive light at temperatures between 60-70 F. Cut large potatoes into smaller pieces a couple of days before planting. Plant potatoes 3 feet apart.\n" +
+                "\n" +
+                "Watering:\n" +
+                "Need 1 - 2 inches of water per week.\n" +
+                "Water young plants every 4-5 days, Increase frequency to 2-3 days once the tubers have formed. Water via drip irrigation from a garden hose. Overhead watering can damage young plants.\n" +
+                "\n" +
+                "Care: Whenever the soil becomes crusty or packed, rake it lightly to allow air flow to the potatoes. Perform “hilling” during the first 4-8 weeks by forming mounds of dirt around the plants. This helps fight weeds and promotes healthier growth. Don’t disturb the hills with any tools. If there are weeds, pull them by hand.\n" +
+                "\n" +
+                "Harvesting:\n" +
+                "Harvest 2-3 weeks after potatoes flower. Use a shovel or spade to loosen soil if necessary, then dig up by hand. Dig deep tubers, found 4-6 inches underground, with shovel or spade. Potatoes are easiest to harvest in dry soil.");
         String carrotJson = gson.toJson(carrot, PlantType.class);
         String potatoJson = gson.toJson(potato, PlantType.class);
         SharedPreferences.Editor editor = preferences.edit();
