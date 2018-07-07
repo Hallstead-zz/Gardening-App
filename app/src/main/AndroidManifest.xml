@@ -16,9 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddPlantToPlot"></activity>
+        <activity android:name=".AddPlantToPlot" />
         <activity android:name=".ViewPlant" />
-        <activity android:name=".NewPlot"></activity>
+        <activity android:name=".NewPlot" />
+        <activity android:name=".LoadPlot" />
+        <activity android:name=".DeletePlot"></activity>
     </application>
 
 </manifest>

@@ -152,4 +152,14 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this, NewPlot.class);
         startActivity(myIntent);
     }
+
+    public void onClickDeletePlot(View view) {
+
+    }
+
+    public void onClickLoadPlot(View view) {
+
+    }
+
+
 }

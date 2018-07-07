@@ -49,7 +49,7 @@ public class NewPlot extends AppCompatActivity {
         EditText editText0 = findViewById(R.id.nameInput);
         String name = editText0.getText().toString();
 
-        if (name == "") {
+        if (name.equals("")) {
             Toast toast = Toast.makeText(context, "Please enter a name.", duration);
             toast.show();
             return;
