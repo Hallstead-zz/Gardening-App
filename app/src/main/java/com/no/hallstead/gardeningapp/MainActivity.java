@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 /**
  * Primary working space for the application
  */
@@ -20,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void setPlantTypes() {
         Gson gson = new Gson();
-        PlantType carrot = new PlantType("Carrots", 2,30);
-        PlantType potato = new PlantType("Potatoes", 2,30);
+        PlantType carrot = new PlantType("Carrots", 7,30);
+        PlantType potato = new PlantType("Potatoes", 7,30);
         carrot.setTips("Planting:\n" +
                 "Plant 3 weeks before the last expected frost. Plant more every 2-3 weeks afterward. Rake the soil so that it is loose and free of rocks before planting. Make sure the carrots have a few inches space in between, as carrots that are too close together produce crooked roots.\n" +
                 "\n" +
@@ -54,6 +56,33 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    public void setPlaceholderPlot() {
+        ArrayList<String> plots = new ArrayList<>();
+        Gson gson = new Gson();
+        String plotsString = gson.toJson(plots, ArrayList.class);
+
+        plots.add("initial");
+        boolean initial[] = new boolean[26];
+        for (int i = 0; i < initial.length; i++)
+            initial[i] = false;
+
+        String save = "";
+        for (int n = 0; n < initial.length; n++) {
+            if(initial[n]) {
+                save = save + "1" + "|$|blessse|$|";
+            } else {
+                save = save + "0" + "|$|blessse|$|";
+            }
+        }
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("initialSpaces", save);
+        editor.putString("allPlots", plotsString);
+        editor.putString("activePlot", "initial");
+        editor.commit();
+    }
+
     /**
      * Code that runs when the activity is created. Generates the view of the plot.
      * @param savedInstanceState
@@ -67,6 +96,28 @@ public class MainActivity extends AppCompatActivity {
         //If the app has never been run before, it will add the two initial types into sharedPreferences
         if (preferences.getString("Carrots", "").equals("")) {
             setPlantTypes();
+        }
+
+        if (preferences.getString("allPlots", "").equals("")) {
+            setPlaceholderPlot();
+        }
+
+        String activePlot = preferences.getString("activePlot", "");
+
+        String mem = preferences.getString(activePlot + "Spaces", "");
+        String[] array = mem.split("\\|\\$\\|blessse\\|\\$\\|");
+        boolean[] spaces = new boolean[array.length];
+        for(int n = 0; n < array.length; n++) {
+            if(array[n].equals("1")) {
+                spaces[n] = true;
+            }
+            else {
+                spaces[n] = false;
+            }
+        }
+
+        for (int n = 1; n < 27; n++) {
+            return;
         }
     }
 

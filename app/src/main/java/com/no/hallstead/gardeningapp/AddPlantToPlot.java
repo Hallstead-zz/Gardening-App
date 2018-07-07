@@ -98,7 +98,8 @@ public class AddPlantToPlot extends AppCompatActivity {
         Plant newPlant = new Plant(type, planted);
         SharedPreferences.Editor editor = preferences.edit();
         String mainPlant = gson.toJson(newPlant, Plant.class);
-        editor.putString(("Plant" + plotLocation), mainPlant);
+        String activePlot = preferences.getString("activePlot", "");
+        editor.putString((activePlot + "Plant" + plotLocation), mainPlant);
         editor.apply();
 
         Log.i("AddPlantToPlot","Planted a " + plantName + " at " + plotLocation);

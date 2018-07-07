@@ -153,7 +153,7 @@
             <TextView
                 android:id="@+id/tipsView"
                 android:layout_width="213dp"
-                android:layout_height="119dp"
+                android:layout_height="800dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="12dp"

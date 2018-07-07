@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".NewPlot">
 
+    <TextView
+        android:id="@+id/labelPlotName"
+        android:layout_width="125dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="384dp"
+        android:text="Plot Name:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Plot Name:" />
+
     <Button
         android:id="@+id/grid"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="#d6d7d7"
         android:onClick="onClickPlot"
         android:tag="1"
@@ -22,7 +38,7 @@
         android:id="@+id/grid2"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="#d6d7d7"
         android:onClick="onClickPlot"
         android:tag="2"
@@ -34,7 +50,7 @@
         android:id="@+id/grid3"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="#d6d7d7"
         android:onClick="onClickPlot"
         android:tag="3"
@@ -46,7 +62,7 @@
         android:id="@+id/grid4"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="#d6d7d7"
         android:onClick="onClickPlot"
         android:tag="4"
@@ -58,7 +74,7 @@
         android:id="@+id/grid5"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:background="#d6d7d7"
         android:onClick="onClickPlot"
         android:tag="5"
@@ -310,9 +326,25 @@
         android:id="@+id/btnCreatePlot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="135dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="17dp"
         android:onClick="onClickCreatePlot"
         android:text="Create Plot"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="431dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/labelPlotName"
+        app:layout_constraintTop_toBottomOf="@+id/grid23" />
 
 </android.support.constraint.ConstraintLayout>

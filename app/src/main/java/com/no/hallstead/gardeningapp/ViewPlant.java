@@ -34,7 +34,8 @@ public class ViewPlant extends AppCompatActivity {
         //fetches the plant from shared preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         Gson gson = new Gson();
-        plant = gson.fromJson(preferences.getString(("Plant" + plotLocation), ""), Plant.class);
+        String activePlot = preferences.getString("activePlot", "");
+        plant = gson.fromJson(preferences.getString((activePlot + "Plant" + plotLocation), ""), Plant.class);
         plantType = (plant.getType());
 
         //sets the fields to the information of the plant
@@ -59,7 +60,8 @@ public class ViewPlant extends AppCompatActivity {
         //Removes the plant from shared preferences.
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.remove("Plant" + plotLocation).apply();
+        String activePlot = preferences.getString("activePlot", "");
+        editor.remove(activePlot + "Plant" + plotLocation).apply();
 
         //Informs the user that the plant has been removed
         Context context = getApplicationContext();
@@ -83,7 +85,8 @@ public class ViewPlant extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         String plantString = gson.toJson(plant, Plant.class);
-        editor.putString(("Plant" + plotLocation), plantString);
+        String activePlot = preferences.getString("activePlot", "");
+        editor.putString((activePlot + "Plant" + plotLocation), plantString);
         editor.apply();
 
         //Refreshes the text view with the new date.
