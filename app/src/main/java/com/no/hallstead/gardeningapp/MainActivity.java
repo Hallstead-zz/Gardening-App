@@ -134,7 +134,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Depending on whether there is a plant in the square or not, it will start the respective activity.
         //it will save which square it is in the intent.
-        if (preferences.getString(("Plant" + value), "").equals("")) {
+        String activePlot = preferences.getString("activePlot", "");
+        if (preferences.getString((activePlot + "Plant" + value), "").equals("")) {
             myIntent = new Intent(this, AddPlantToPlot.class);
             myIntent.putExtra("plotLocation", value);
         }
