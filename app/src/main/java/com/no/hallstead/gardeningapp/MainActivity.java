@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickNewPlot(View view) {
-        
+        Intent myIntent = new Intent(this, NewPlot.class);
+        startActivity(myIntent);
     }
 }

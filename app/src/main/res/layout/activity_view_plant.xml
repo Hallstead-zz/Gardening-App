@@ -151,8 +151,8 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
+                android:id="@+id/tipsView"
+                android:layout_width="213dp"
                 android:layout_height="119dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
