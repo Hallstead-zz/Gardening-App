@@ -80,7 +80,8 @@ public class NewPlot extends AppCompatActivity {
         editor.putString("allPlots", gson.toJson(plotsList, ArrayList.class));
         editor.putString("activePlot", name);
         editor.putString(name + "Spaces", save);
-        editor.commit();
+        editor.apply();
 
+        finish();
     }
 }

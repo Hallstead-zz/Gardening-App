@@ -1,11 +1,14 @@
 package com.no.hallstead.gardeningapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -80,7 +83,33 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("initialSpaces", save);
         editor.putString("allPlots", plotsString);
         editor.putString("activePlot", "initial");
-        editor.commit();
+        editor.apply();
+    }
+
+    public void displayVisibility() {
+        String activePlot = preferences.getString("activePlot", "");
+
+        String mem = preferences.getString(activePlot + "Spaces", "");
+        String[] array = mem.split("\\|\\$\\|blessse\\|\\$\\|");
+        boolean[] spaces = new boolean[array.length];
+        for(int n = 0; n < array.length; n++) {
+            if(array[n].equals("1")) {
+                spaces[n] = true;
+            }
+            else {
+                spaces[n] = false;
+            }
+        }
+
+        for (int n = 1; n < 26; n++) {
+            Integer id = getResources().getIdentifier("Grid" + Integer.toString(n),"id",getPackageName());
+            View view = findViewById(id);
+            if (spaces[n]) {
+                view.setVisibility(View.VISIBLE);
+            } else {
+                view.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 
     /**
@@ -102,23 +131,7 @@ public class MainActivity extends AppCompatActivity {
             setPlaceholderPlot();
         }
 
-        String activePlot = preferences.getString("activePlot", "");
-
-        String mem = preferences.getString(activePlot + "Spaces", "");
-        String[] array = mem.split("\\|\\$\\|blessse\\|\\$\\|");
-        boolean[] spaces = new boolean[array.length];
-        for(int n = 0; n < array.length; n++) {
-            if(array[n].equals("1")) {
-                spaces[n] = true;
-            }
-            else {
-                spaces[n] = false;
-            }
-        }
-
-        for (int n = 1; n < 27; n++) {
-            return;
-        }
+        displayVisibility();
     }
 
     /**
@@ -148,18 +161,31 @@ public class MainActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (preferences.getString("allPlots", "").equals("")) {
+            setPlaceholderPlot();
+        }
+        displayVisibility();
+    }
+
+
     public void onClickNewPlot(View view) {
         Intent myIntent = new Intent(this, NewPlot.class);
-        startActivity(myIntent);
+        startActivityForResult(myIntent, 1);
     }
 
     public void onClickDeletePlot(View view) {
+        Intent myIntent = new Intent(this, DeletePlot.class);
+        startActivityForResult(myIntent, 1);
 
     }
 
     public void onClickLoadPlot(View view) {
-
+        Intent myIntent = new Intent(this, LoadPlot.class);
+        startActivity(myIntent);
     }
-
 
 }
