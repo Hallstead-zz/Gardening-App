@@ -3,14 +3,18 @@ package com.no.hallstead.gardeningapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import org.w3c.dom.Text;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -23,6 +27,7 @@ public class ViewPlant extends AppCompatActivity {
     String plotLocation;
     Plant plant;
     PlantType plantType;
+    ColorStateList oldColors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +48,21 @@ public class ViewPlant extends AppCompatActivity {
         initView.setText(plant.getName());
         initView = findViewById(R.id.dateView);
         GregorianCalendar planted = plant.getDatePlanted();
-        initView.setText((planted.get(Calendar.MONTH) + "/" + planted.get(Calendar.DAY_OF_MONTH) + "/" + planted.get(Calendar.YEAR)));
+        initView.setText(((planted.get(Calendar.MONTH) + 1) + "/" + planted.get(Calendar.DAY_OF_MONTH) + "/" + planted.get(Calendar.YEAR)));
         initView = findViewById(R.id.waterView);
         GregorianCalendar watered = plant.getDateLastWatered();
-        initView.setText((watered.get(Calendar.MONTH) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
-        initView = findViewById(R.id.tipsView);
-        initView.setText(plantType.getTips());
+        initView.setText(((watered.get(Calendar.MONTH) + 1) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
+        TextView tipsView = findViewById(R.id.tipsView);
+        tipsView.setText(plantType.getTips());
+
+        //sets date to red if it needs watering
+
+        GregorianCalendar today = new GregorianCalendar();
+        today.add(Calendar.DAY_OF_MONTH, (-1 * plantType.getWaterFreq()));
+        if (plant.getDateLastWatered().before(today)) {
+            oldColors =  initView.getTextColors();
+            initView.setTextColor(0xffa52a2a);
+        }
     }
 
     /**
@@ -92,7 +106,10 @@ public class ViewPlant extends AppCompatActivity {
         //Refreshes the text view with the new date.
         GregorianCalendar watered = plant.getDateLastWatered();
         TextView waterView = findViewById(R.id.waterView);
-        waterView.setText((watered.get(Calendar.MONTH) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
+        waterView.setText(((watered.get(Calendar.MONTH) + 1) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
+
+        //sets text back to normal
+        waterView.setTextColor(oldColors);
 
         //Informs the user that the plant was watered.
         Context context = getApplicationContext();

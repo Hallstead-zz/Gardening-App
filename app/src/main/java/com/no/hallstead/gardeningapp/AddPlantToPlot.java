@@ -89,7 +89,7 @@ public class AddPlantToPlot extends AppCompatActivity {
             toast.show();
             return;
         }
-        GregorianCalendar planted = new GregorianCalendar(Integer.valueOf(year), Integer.valueOf(month), Integer.valueOf(day));
+        GregorianCalendar planted = new GregorianCalendar(Integer.valueOf(year), Integer.valueOf(month) - 1, Integer.valueOf(day));
 
         //Saves the plant to shared preferences
         Gson gson = new Gson();
