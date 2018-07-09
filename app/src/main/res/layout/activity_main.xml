@@ -231,32 +231,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:onClick="onClickNewPlot"
         android:text="New Plot"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.971"
-        app:layout_constraintStart_toEndOf="@+id/loadPlot" />
+        app:layout_constraintEnd_toStartOf="@+id/loadPlot"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/deletePlot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:onClick="onClickDeletePlot"
         android:text="Delete Plot"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/loadPlot"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/loadPlot" />
 
     <Button
         android:id="@+id/loadPlot"
@@ -266,8 +256,8 @@
         android:onClick="onClickLoadPlot"
         android:text="Load Plot"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/deletePlot"
+        app:layout_constraintStart_toEndOf="@+id/newPlot" />
 
     <Button
         android:id="@+id/Grid1"
@@ -288,7 +278,6 @@
         android:onClick="onClickPlot"
         android:tag="2"
         app:layout_constraintEnd_toStartOf="@+id/Grid3"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Grid1"
         app:layout_constraintTop_toBottomOf="@+id/placeholderInfo" />
 
@@ -331,14 +320,24 @@
     <Button
         android:id="@+id/placeholderInfo"
         android:layout_width="370dp"
-        android:layout_height="20dp"
+        android:layout_height="41dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="We should consider putting something in this space"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plotName"
+        android:layout_width="367dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

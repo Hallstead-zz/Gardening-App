@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -110,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
                 view.setVisibility(View.INVISIBLE);
             }
         }
+        TextView initView = findViewById(R.id.plotName);
+        if (activePlot.equals("initial"))
+            initView.setText("Create a new plot to begin.");
+        else
+            initView.setText(activePlot);
     }
 
     /**

@@ -56,11 +56,9 @@ public class ViewPlant extends AppCompatActivity {
         tipsView.setText(plantType.getTips());
 
         //sets date to red if it needs watering
-
         GregorianCalendar today = new GregorianCalendar();
         today.add(Calendar.DAY_OF_MONTH, (-1 * plantType.getWaterFreq()));
         if (plant.getDateLastWatered().before(today)) {
-            oldColors =  initView.getTextColors();
             initView.setTextColor(0xffa52a2a);
         }
     }
@@ -109,7 +107,7 @@ public class ViewPlant extends AppCompatActivity {
         waterView.setText(((watered.get(Calendar.MONTH) + 1) + "/" + watered.get(Calendar.DAY_OF_MONTH) + "/" + watered.get(Calendar.YEAR)));
 
         //sets text back to normal
-        waterView.setTextColor(oldColors);
+        waterView.setTextColor(0xFF747474);
 
         //Informs the user that the plant was watered.
         Context context = getApplicationContext();
