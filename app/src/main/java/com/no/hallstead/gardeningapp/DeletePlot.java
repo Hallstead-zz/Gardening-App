@@ -15,23 +15,14 @@ import java.util.ArrayList;
 
 public class DeletePlot extends AppCompatActivity {
 
+    GardenManager manager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_plot);
-    }
 
-    public void nuke(String name) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-
-        editor.remove(name + "Spaces");
-
-        for (int i = 1; i < 26; i++) {
-            editor.remove(name + "Plant" + Integer.toString(i));
-        }
-
-        editor.apply();
+        manager = new GardenManager(this);
     }
 
 
@@ -62,7 +53,7 @@ public class DeletePlot extends AppCompatActivity {
         }
 
         SharedPreferences.Editor editor = preferences.edit();
-        nuke(name);
+        manager.nuke(name);
         allPlots.remove(name);
         String oneLessPlot = gson.toJson(allPlots);
         editor.putString("allPlots", oneLessPlot);
@@ -86,7 +77,7 @@ public class DeletePlot extends AppCompatActivity {
 
         while (!allPlots.isEmpty()) {
             String name = allPlots.get(0);
-            nuke(name);
+            manager.nuke(name);
             allPlots.remove(name);
         }
 
