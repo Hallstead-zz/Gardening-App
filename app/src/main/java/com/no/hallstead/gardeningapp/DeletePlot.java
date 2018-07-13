@@ -95,5 +95,20 @@ public class DeletePlot extends AppCompatActivity {
         finish();
     }
 
+    public void onClickDeleteCurrent(View view) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        Gson gson = new Gson();
+        ArrayList<String> allPlots = gson.fromJson(preferences.getString("allPlots", ""), ArrayList.class);
+        
+            String name = preferences.getString("activePlot", "");
+            nuke(name);
+            allPlots.remove(name);
+
+        editor.putString("activePlot", "");
+        editor.apply();
+        finish();
+    }
+
 
 }
