@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -23,6 +24,24 @@ public class DeletePlot extends AppCompatActivity {
         setContentView(R.layout.activity_delete_plot);
 
         manager = new GardenManager(this);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        Gson gson = new Gson();
+        ArrayList<String> plotsList = gson.fromJson(preferences.getString("allPlots", ""), ArrayList.class);
+        String out = "";
+        if (plotsList.contains("initial")) {
+            TextView initView = findViewById(R.id.plotsList3);
+            initView.setText("There are no plots.");
+            return;
+        }
+        while(!plotsList.isEmpty()) {
+            String current = plotsList.get(0);
+            out += (current + "\n");
+            plotsList.remove(current);
+        }
+
+        TextView initView = findViewById(R.id.plotsList3);
+        initView.setText(out);
     }
 
 
@@ -86,7 +105,7 @@ public class DeletePlot extends AppCompatActivity {
         finish();
     }
 
-    public void onClickDeleteCurrent(View view) {
+    /*public void onClickDeleteCurrent(View view) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         Gson gson = new Gson();
@@ -99,7 +118,7 @@ public class DeletePlot extends AppCompatActivity {
         editor.putString("activePlot", "");
         editor.apply();
         finish();
-    }
+    }*/
 
 
 }
