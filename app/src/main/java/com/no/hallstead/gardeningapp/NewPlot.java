@@ -74,6 +74,11 @@ public class NewPlot extends AppCompatActivity {
                 save = save + "0" + "|$|blessse|$|";
             }
         }
+        if (plotsList.contains("initial")) {
+            GardenManager manager = new GardenManager(this);
+            manager.nuke("initial");
+            plotsList.remove("initial");
+        }
 
         plotsList.add(name);
 

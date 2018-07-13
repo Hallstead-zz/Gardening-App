@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickLoadPlot(View view) {
         Intent myIntent = new Intent(this, LoadPlot.class);
-        startActivity(myIntent);
+        startActivityForResult(myIntent,1);
     }
 
 }

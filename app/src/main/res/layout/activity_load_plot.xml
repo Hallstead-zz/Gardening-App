@@ -6,4 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".LoadPlot">
 
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plotsList" />
+
+    <TextView
+        android:id="@+id/labelPlots"
+        android:layout_width="68dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Plots:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Plots:" />
+
+    <TextView
+        android:id="@+id/plotsList"
+        android:layout_width="149dp"
+        android:layout_height="253dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelPlots" />
+
+    <Button
+        android:id="@+id/loadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:onClick="onClickLoadPlot"
+        android:text="Load"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 </android.support.constraint.ConstraintLayout>
