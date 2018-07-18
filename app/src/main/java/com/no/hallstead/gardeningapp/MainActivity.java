@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 "Harvesting:\n" +
                 "Harvest 2-3 weeks after potatoes flower. Use a shovel or spade to loosen soil if necessary, then dig up by hand. Dig deep tubers, found 4-6 inches underground, with shovel or spade. Potatoes are easiest to harvest in dry soil.");
         cabbage.setTips("Planting:\n" +
-                "Start the seeds 6 to 8 weeks before the last spring frost. Move plants outside 2 to 3 weeks before the frost. Plant 12 to 14 inches apart.\n" +
+                "Start the seeds indoors 6 to 8 weeks before the last spring frost. Move plants outside 2 to 3 weeks before the frost. Plant 12 to 14 inches apart.\n" +
                 "Watering:\n" +
                 "Need 1-2 inches per week.\n" +
                 "Water cabbages in the morning. Water at the base and not the head using low pressure water to avoid washing away the soil.\n" +
