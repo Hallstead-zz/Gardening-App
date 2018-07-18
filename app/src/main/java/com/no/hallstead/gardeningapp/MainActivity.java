@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         PlantType carrot = new PlantType("Carrots", 7,30);
         PlantType potato = new PlantType("Potatoes", 7,30);
+        PlantType cabbage = new PlantType("Cabbages", 7,30);
         carrot.setTips("Planting:\n" +
                 "Plant 3 weeks before the last expected frost. Plant more every 2-3 weeks afterward. Rake the soil so that it is loose and free of rocks before planting. Make sure the carrots have a few inches space in between, as carrots that are too close together produce crooked roots.\n" +
                 "\n" +
@@ -52,11 +53,22 @@ public class MainActivity extends AppCompatActivity {
                 "\n" +
                 "Harvesting:\n" +
                 "Harvest 2-3 weeks after potatoes flower. Use a shovel or spade to loosen soil if necessary, then dig up by hand. Dig deep tubers, found 4-6 inches underground, with shovel or spade. Potatoes are easiest to harvest in dry soil.");
+        cabbage.setTips("Planting:\n" +
+                "Start the seeds 6 to 8 weeks before the last spring frost. Move plants outside 2 to 3 weeks before the frost. Plant 12 to 14 inches apart.\n" +
+                "Watering:\n" +
+                "Need 1-2 inches per week.\n" +
+                "Water cabbages in the morning. Water at the base and not the head using low pressure water to avoid washing away the soil.\n" +
+                "Care:\n" +
+                "Fertilize the plants throughout the growing season. When the plants reach 5 inches tall, thin them to maintain the 12-14 inches between them.\n" +
+                "Harvesting:\n" +
+                "Harvest when heads are firm when squeezed and at desired size, usually about 70 days after planting. Cut as low on the stem as you can, leaving the outer leaves of the stalk in place. This will allow new heads to sprout on the stalk, which can be harvested when they reach tennis-ball size and used for salad. When done with a plant, or at the sign of disease or infestation, remove the stem and root system from the garden. Compost only healthy plants.\n");
         String carrotJson = gson.toJson(carrot, PlantType.class);
         String potatoJson = gson.toJson(potato, PlantType.class);
+        String cabbageJson = gson.toJson(cabbage, PlantType.class);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("Carrots", carrotJson);
         editor.putString("Potatoes", potatoJson);
+        editor.putString("Cabbages", cabbageJson);
         editor.apply();
     }
 

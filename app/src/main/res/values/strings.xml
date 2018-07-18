@@ -6,4 +6,5 @@
         <item>Carrots</item>
         <item>Potatoes</item>
     </string-array>
+    <string name="title_activity_create_plant_type">CreatePlantType</string>
 </resources>

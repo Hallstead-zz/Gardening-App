@@ -20,7 +20,11 @@
         <activity android:name=".ViewPlant" />
         <activity android:name=".NewPlot" />
         <activity android:name=".LoadPlot" />
-        <activity android:name=".DeletePlot"></activity>
+        <activity android:name=".DeletePlot" />
+        <activity
+            android:name=".CreatePlantType"
+            android:label="@string/title_activity_create_plant_type"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
