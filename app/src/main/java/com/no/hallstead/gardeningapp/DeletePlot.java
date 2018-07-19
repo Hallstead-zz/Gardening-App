@@ -15,9 +15,12 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class DeletePlot extends AppCompatActivity {
-
     GardenManager manager;
 
+    /**
+     * generates the list of currently existing plots
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,10 @@ public class DeletePlot extends AppCompatActivity {
         initView.setText(out);
     }
 
-
+    /**
+     * takes data from the textbox and deletes the plot with that name.
+     * @param view
+     */
     public void onClickDeletePlot(View view) {
         //For future toasts
         Context context = getApplicationContext();
@@ -88,6 +94,10 @@ public class DeletePlot extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Deletes all currently saved plots.
+     * @param view
+     */
     public void onClickDeleteAll(View view) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();

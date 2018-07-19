@@ -20,6 +20,10 @@ import java.util.ArrayList;
 public class NewPlot extends AppCompatActivity {
     private boolean selected[] = new boolean[26];
 
+    /**
+     * Initializes the grid to not selected
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,11 @@ public class NewPlot extends AppCompatActivity {
         for (int i = 0; i < selected.length; i++)
             selected[i] = false;
     }
+
+    /**
+     * Selects or deselects the grid space.
+     * @param view
+     */
     @SuppressLint("ResourceType")
     public void onClickPlot(View view) {
         int tag = Integer.parseInt((String) view.getTag());
@@ -39,8 +48,11 @@ public class NewPlot extends AppCompatActivity {
         }
     }
 
+    /**
+     * Takes the selected grid spaces and crates a plot with the selected spaces.
+     * @param view
+     */
     public void onClickCreatePlot(View view) {
-
         //For future toasts
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;

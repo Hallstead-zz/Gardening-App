@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * Only runs if no plots are saved. Sets a dummy plot with no spaces.
+     */
     public void setPlaceholderPlot() {
         ArrayList<String> plots = new ArrayList<>();
         Gson gson = new Gson();
@@ -99,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * shows/hides the spaces in the grid appropriate to what is in the plot.
+     */
     public void displayVisibility() {
         String activePlot = preferences.getString("activePlot", "");
 

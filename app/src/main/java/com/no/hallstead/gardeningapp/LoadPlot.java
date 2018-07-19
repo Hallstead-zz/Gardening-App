@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class LoadPlot extends AppCompatActivity {
 
+    /**
+     * Generates a list of currently saved plots.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,10 @@ public class LoadPlot extends AppCompatActivity {
         initView.setText(out);
     }
 
+    /**
+     * loads the plot into the main activity with the same name as the data in the textbox.
+     * @param view
+     */
     public void onClickLoadPlot(View view) {
         //For future toasts
         Context context = getApplicationContext();

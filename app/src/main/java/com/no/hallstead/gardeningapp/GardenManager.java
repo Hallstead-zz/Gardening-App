@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+/**
+ * used for deleting saved plots
+ */
 public class GardenManager {
 
     SharedPreferences preferences;
